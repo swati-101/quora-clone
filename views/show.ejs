@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Details</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Post Details</h2>
+        <div class="card">
+            <h3>@<%= post.username %></h3>
+            <p><%= post.content %></p>
+            <small>Posted on: <%= post.createdAt.toDateString() %></small>
+        </div>
+        <div style="margin-top: 15px;">
+            <a href="/posts/<%= post._id %>/edit" class="btn">Edit Post</a>
+            <a href="/posts" style="margin-left: 10px;">Back to All Posts</a>
+        </div>
+    </div>
+</body>
+</html>

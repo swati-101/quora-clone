@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quora Clone</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Quora Clone</h1>
+        <a href="/posts/new" class="btn">Create New Post</a>
+    </div>
+
+    <div class="container">
+        <% for(let post of posts) { %>
+            <div class="card">
+                <h3>@<%= post.username %></h3>
+                <p><%= post.content %></p>
+                <div class="actions">
+                    <a href="/posts/<%= post._id %>">View Details</a>
+                    <a href="/posts/<%= post._id %>/edit">Edit</a>
+                    <form method="POST" action="/posts/<%= post._id %>?_method=DELETE">
+                        <button type="submit" class="btn-del">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

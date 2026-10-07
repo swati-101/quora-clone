@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Edit Post</h2>
+        <form method="POST" action="/posts/<%= post._id %>?_method=PATCH">
+            <input type="text" value="<%= post.username %>" disabled />
+            <textarea name="content" rows="6" required><%= post.content %></textarea>
+            <button type="submit" class="btn">Update Post</button>
+        </form>
+        <a href="/posts">Cancel</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Ask a Question / Share Knowledge</h2>
+        <form method="POST" action="/posts">
+            <input type="text" name="username" placeholder="Aapka Naam" required />
+            <textarea name="content" rows="6" placeholder="Aapka sawaal ya content yahan likhein..." required></textarea>
+            <button type="submit" class="btn">Submit Post</button>
+        </form>
+        <a href="/posts">Cancel</a>
+    </div>
+</body>
+</html>
