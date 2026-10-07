@@ -1,3 +1,6 @@
+require("dotenv").config();
+const PORT = process.env.PORT || 8080;
+
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
@@ -7,7 +10,8 @@ const Post = require("./models/post");
 const app = express();
 
 // Database Connection
-mongoose.connect("mongodb://127.0.0.1:27017/quoraClone")
+const dbURL = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/quoraClone";
+mongoose.connect(dbURL)
     .then(() => console.log("MongoDB Connected"))
     .catch((err) => console.log("DB Error:", err));
 
@@ -70,6 +74,6 @@ app.get("/", (req, res) => {
     res.redirect("/posts");
 });
 
-app.listen(8080, () => {
-    console.log("Server running on port 8080");
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}` );
 });
